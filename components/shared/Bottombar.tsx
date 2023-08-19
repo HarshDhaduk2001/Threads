@@ -6,12 +6,12 @@ import { usePathname } from "next/navigation";
 
 import { sidebarLinks } from "@/constants";
 
-const Bottombar = () => {
+function Bottombar() {
   const pathname = usePathname();
 
   return (
-    <section className="bottombar">
-      <div className="bottombar_container">
+    <section className='bottombar'>
+      <div className='bottombar_container'>
         {sidebarLinks.map((link) => {
           const isActive =
             (pathname.includes(link.route) && link.route.length > 1) ||
@@ -28,10 +28,10 @@ const Bottombar = () => {
                 alt={link.label}
                 width={16}
                 height={16}
-                className="object-contain"
+                className='object-contain'
               />
 
-              <p className="text-subtle-medium text-light-1 max-sm:hidden">
+              <p className='text-subtle-medium text-light-1 max-sm:hidden'>
                 {link.label.split(/\s+/)[0]}
               </p>
             </Link>
@@ -40,6 +40,6 @@ const Bottombar = () => {
       </div>
     </section>
   );
-};
+}
 
 export default Bottombar;
